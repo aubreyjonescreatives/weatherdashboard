@@ -1,0 +1,46 @@
+{
+"weatherItems": [
+{
+"currentweather": "Sunny", 
+"latitude": "45", 
+"longitude": "32"
+
+
+
+
+
+}, 
+
+{
+    "currentweather": "Rainy", 
+    "latitude": "45", 
+    "longitude": "32"
+    
+    
+    
+    
+    
+    }, 
+
+
+    {
+        "currentweather": "Chance of Snow",
+        "latitude": "45", 
+        "longitude": "32"
+        
+        
+        
+        
+        
+        }
+
+
+
+
+]
+
+
+
+
+
+}

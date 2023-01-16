@@ -12,8 +12,10 @@
 async function getWeatherInfo() {
 
 try {
-const response = await fetch('../weather.json')
+const response = await fetch('../weatherList.json')
+console.log(response)
 return await response.json()
+
 
 //.then((response) => response.json())
 //.then((data) => console.log(data));
@@ -30,6 +32,7 @@ return await response.json()
 
 
 let allWeather = document.querySelectorAll('button')
+console.log(allWeather)
 
 allWeather.forEach(element => {
     element.addEventListener('click', weatherInfo)
@@ -44,23 +47,30 @@ console.log(weatherData)
 
 
 function weatherInfo(event) {
-    let weatherChoice = weatherData.weather.find(someweather => {
-        return event.target.id === someweather.theweather.toLowerCase()
+    let weatherChoice = weatherData.weatherItems.find(weatherList => {
+        return event.target.id === weatherList.theweather.toLowerCase()
     })
     console.log(weatherChoice) 
 
 
 
-const weather = {
+const weatherDisplay = {
     stem: `${weatherChoice.theweather}`, 
     display: () => {
-        document.querySelector('#stem').textContent = weather.stem
+        document.querySelector('#stem').textContent = weatherDisplay.stem
+    }, 
+    check: (userChoice) => {
+        if (userChoice === weatherDisplay.stem) {
+            document.querySelector('#feedback').textContent = "Longitude"
+        } else 
+        document.querySelector('#feedback').textContent = "Latitude"
     }
 }
 
 
-document.querySelector('#searchButton').addEventListener('click', () => weather.check(1) )
+document.querySelector('#searchButton').addEventListener('click', () => weatherDisplay.check(1) )
 
-weather.display()
+weatherDisplay.display()
+console.log(weatherDisplay)
 
 }
