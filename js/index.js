@@ -48,14 +48,14 @@ console.log(weatherData)
 
 function weatherInfo(event) {
     let weatherChoice = weatherData.weatherItems.find(weatherList => {
-        return event.target.id === weatherList.theweather.toLowerCase()
+        return event.target.id === weatherList.currentweather.toLowerCase()
     })
     console.log(weatherChoice) 
 
 
 
 const weatherDisplay = {
-    stem: `${weatherChoice.theweather}`, 
+    stem: `${weatherChoice.currentweather}`, 
     display: () => {
         document.querySelector('#stem').textContent = weatherDisplay.stem
     }, 
@@ -67,10 +67,16 @@ const weatherDisplay = {
     }
 }
 
-
 document.querySelector('#searchButton').addEventListener('click', () => weatherDisplay.check(1) )
+
+
 
 weatherDisplay.display()
 console.log(weatherDisplay)
 
+
 }
+
+
+
+
